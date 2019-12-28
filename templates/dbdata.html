@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body_block %}
+{% if  topics %}
+<h1>Topics Data is </h1>
+<table border="2pt">
+    <tr>
+      <th>Topics</th>
+    </tr>
+    {% for topic in topics %}
+    <tr>
+      <td>{{topic.top_name}}</td>
+    </tr>
+    {% endfor %}
+</table>
+  
+{% else %}
+  <h1>No Data Found</h1>
+{% endif %}
+{% if  webpages %}
+<h1>Access Details Data is </h1>
+<table border="2pt">
+    <tr>
+      <th>Webpage Name</th>
+      <th>Access Date</th>
+    </tr>
+    {% for webpage in webpages %}
+    <tr>
+      <td>{{webpage.name}}</td>
+      <td>{{webpage.date}}</td>
+    </tr>
+    {% endfor %}
+</table>
+  
+{% else %}
+  <h1>No Data Found</h1>
+{% endif %}
+{% endblock %}
+

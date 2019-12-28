@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create Topic</title>
+</head>
+<body>
+    <h1>Enter the Details to create Topic</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {% if topics %}
+        <select name="top" id="top">
+            {% for topic in topics %}
+            <option value="{{topic}}">{{topic.top_name}}</option>
+            {% endfor %}
+        </select> 
+        {% endif %}
+        Webpage Name: <input type="text" name="name" id="name">
+        Webpage Url : <input type="url" name="url" id="url">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

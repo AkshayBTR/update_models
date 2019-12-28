@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>update webpage</title>
+</head>
+<body>
+    <h1>Edit The fields and click on submit</h1>
+    <form action="{% url 'myapp:upweb' %}" method="POST">
+        {% csrf_token %}
+        top_name: <input type="text" name="top" id="top" placeholder="{{webpage.top_name}}" value="{{webpage.top_name}}"><br>
+        name: <input type="text" name="name" id="name" value={{webpage.name}}><br>
+        url: <input type="url" name="url" id="url" value="{{webpage.url}}"><br>
+    <input type="submit" value="Update">
+    </form>
+</body>
+</html>
